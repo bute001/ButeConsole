@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{CA52F204-584E-4E51-848D-4AE6306AA494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButeConsoleCore", "ButeConsoleCore\ButeConsoleCore.csproj", "{C6857277-C0F4-4F4E-8722-45D99546CA63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButeConsoleCoreDemo", "Demo\ButeConsoleCoreDemo\ButeConsoleCoreDemo.csproj", "{81B67B05-4BFE-45E2-8C93-8DBF049B82E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6857277-C0F4-4F4E-8722-45D99546CA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6857277-C0F4-4F4E-8722-45D99546CA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6857277-C0F4-4F4E-8722-45D99546CA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6857277-C0F4-4F4E-8722-45D99546CA63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B67B05-4BFE-45E2-8C93-8DBF049B82E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B67B05-4BFE-45E2-8C93-8DBF049B82E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B67B05-4BFE-45E2-8C93-8DBF049B82E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B67B05-4BFE-45E2-8C93-8DBF049B82E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81B67B05-4BFE-45E2-8C93-8DBF049B82E4} = {CA52F204-584E-4E51-848D-4AE6306AA494}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D98856B5-7687-4C3B-9FD7-99AAC251319D}
+	EndGlobalSection
+EndGlobal

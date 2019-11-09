@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>ButeConsoleCore</AssemblyName>
+    <RootNamespace>ButeConsole</RootNamespace>
+    <ApplicationIcon />
+    <StartupObject />
+    <Authors>Bute</Authors>
+    <PackageId>ButeConsoleCore</PackageId>
+    <Product>ButeConsole</Product>
+  </PropertyGroup>
+
+</Project>
