@@ -1,15 +1,27 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>ButeConsoleCore</AssemblyName>
     <RootNamespace>ButeConsole</RootNamespace>
-    <ApplicationIcon />
+    <ApplicationIcon></ApplicationIcon>
     <StartupObject />
     <Authors>Bute</Authors>
     <PackageId>ButeConsoleCore</PackageId>
     <Product>ButeConsole</Product>
+    <Win32Resource />
+    <Description>please see https://github.com/bute001/ButeConsole</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <Company />
+    <RepositoryUrl>https://github.com/bute001/ButeConsole.git</RepositoryUrl>
+    <PackageIcon>Console.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Console.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
 
 </Project>
