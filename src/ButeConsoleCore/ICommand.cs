@@ -4,10 +4,9 @@ using System.Text;
 
 namespace ButeConsole
 {
-    interface ICommand
+    public interface ICommand
     {
-        ConsoleCommand ConsoleCommand { get; set; }
-
+        
         string Description { get; }
 
         string Title { get; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using ButeConsole;
 
 namespace ButeConsoleCoreDemo
@@ -14,6 +15,11 @@ namespace ButeConsoleCoreDemo
         public override void Run()
         {
             Console.WriteLine("this is help.");
+
+            ConsoleManagement.Instance.Commands.ToList().ForEach(x => Console.WriteLine($"{x.Title}\t{x.Description}"));
+
+            Console.WriteLine("----------------end-----------------");
+            Console.WriteLine();
         }
     }
 }

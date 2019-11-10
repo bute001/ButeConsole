@@ -6,7 +6,7 @@ namespace ButeConsole
 {
     public abstract class CommandEntity<T> : ICommand
     {
-        public ConsoleCommand ConsoleCommand { get; set; }
+        public ConsoleManagement ConsoleCommand { get; set; }
 
         public abstract string Description { get; }
         public abstract string Title { get; }

@@ -2,27 +2,50 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Linq;
 
 namespace ButeConsole
 {
-    public class Parsing
+    public sealed class ConsoleManagement
     {
-        private Parsing()
+        private ConsoleManagement()
         {
             Init();
         }
 
-        public static readonly Parsing _instance = new Parsing();
+        public static readonly ConsoleManagement _instance = new ConsoleManagement();
 
-        public static Parsing Instance => _instance;
+        public static ConsoleManagement Instance => _instance;
 
+
+        public System.ConsoleColor ForegrundColor { get; set; } = ConsoleColor.Gray;
+
+        public string LeftSymbol { get; set; } = ">";
 
         Dictionary<string, ICommand> _instructions = new Dictionary<string, ICommand>();
 
+        public ICommand[] Commands => _instructions.Values.ToArray();
 
-        internal ICommand[] Commands => _instructions.Values.ToArray();
+        public void Startup()
+        {
+            do
+            {
+                Console.ForegroundColor = ForegrundColor;
+                Console.Write(LeftSymbol);
+
+                var text = Console.ReadLine();
+
+                try
+                {
+                    Run(text);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            } while (true);
+        }
 
         void Init()
         {
@@ -53,42 +76,6 @@ namespace ButeConsole
                 }
             }
         }
-
-
-        public void Run(ConsoleCommand consoleCommand, string text)
-        {
-            if (text != null && text.StartsWith(consoleCommand.LeftSymbol))
-            {
-                text = text.Substring(consoleCommand.LeftSymbol.Length + 1);
-            }
-
-            if (string.IsNullOrEmpty(text))
-            {
-                return;
-            }
-
-
-            var key = _instructions.Keys.FirstOrDefault(x => text.StartsWith(x));
-            if (string.IsNullOrEmpty(key))
-            {
-                throw new InstructionExcepton("no command.");
-            }
-
-
-            string param = string.Empty;
-            if (text.Length > key.Length)
-            {
-                param = text.Substring(key.Length + 1);
-            }
-
-            var dictionary = HandleParam(param);
-
-
-            _instructions[key].ConsoleCommand = consoleCommand;
-            _instructions[key].Run(dictionary);
-
-        }
-
 
         private Dictionary<string, string> HandleParam(string param)
         {
@@ -136,6 +123,37 @@ namespace ButeConsole
             }
 
             return result;
+        }
+
+        private void Run(string text)
+        {
+            if (text != null && text.StartsWith(LeftSymbol))
+            {
+                text = text.Substring(LeftSymbol.Length + 1);
+            }
+
+            if (string.IsNullOrEmpty(text))
+            {
+                return;
+            }
+
+
+            var key = _instructions.Keys.FirstOrDefault(x => text.StartsWith(x));
+            if (string.IsNullOrEmpty(key))
+            {
+                throw new InstructionExcepton("no command.");
+            }
+
+
+            string param = string.Empty;
+            if (text.Length > key.Length)
+            {
+                param = text.Substring(key.Length + 1);
+            }
+
+            var dictionary = HandleParam(param);
+            _instructions[key].Run(dictionary);
+
         }
     }
 }

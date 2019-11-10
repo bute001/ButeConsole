@@ -14,8 +14,7 @@ class Program
         {
             Console.WriteLine("Hello World!");
 
-            ConsoleCommand consoleCommand = new ConsoleCommand();
-            consoleCommand.Run();
+            ConsoleManagement.Instance.Startup();
         }
     }
 ```

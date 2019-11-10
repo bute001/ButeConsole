@@ -11,10 +11,12 @@ namespace ButeConsole
         {
             object instance = Activator.CreateInstance(type);
 
+            List<string> paramNames = new List<string>();
             foreach (var p in type.GetProperties())
             {
                 var attr = GetCommandParamAttribute(p);
                 var name = GetParamName(p, attr);
+                paramNames.Add(name);
 
                 CheckParam(attr, name, param);
 
@@ -25,6 +27,15 @@ namespace ButeConsole
                     p.SetValue(instance, value);
                 }
             }
+
+            foreach (var p in param.Keys)
+            {
+                if (!paramNames.Contains(p))
+                {
+                    throw new InstructionExcepton($"param {p} is not valid.");
+                }
+            }
+
 
             return instance;
 

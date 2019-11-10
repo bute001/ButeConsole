@@ -6,7 +6,7 @@ namespace ButeConsole
 {
     public abstract class CommandNoParam : ICommand
     {
-        public ConsoleCommand ConsoleCommand { get; set; }
+        public ConsoleManagement ConsoleCommand { get; set; }
 
         public abstract string Description { get; }
         public abstract string Title { get; }
@@ -18,6 +18,11 @@ namespace ButeConsole
 
         void ICommand.Run(Dictionary<string, string> param)
         {
+            if (param.Count > 0)
+            {
+                throw new InstructionExcepton("this command no params.");
+            }
+
             Run();
         }
     }
