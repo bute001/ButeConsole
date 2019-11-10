@@ -6,7 +6,7 @@ using static ButeConsoleCoreDemo.HelloCommand;
 
 namespace ButeConsoleCoreDemo
 {
-    class HelloCommand : CommandBase<Hello>
+    class HelloCommand : CommandEntity<Hello>
     {
         public class Hello
         {

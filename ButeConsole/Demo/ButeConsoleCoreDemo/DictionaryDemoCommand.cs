@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ButeConsoleCoreDemo
 {
-    public class DictionaryDemoCommand : CommandBase<Dictionary<string, string>>
+    public class DictionaryDemoCommand : CommandDictionary
     {
         public override string Description { get { return "use dictionary command"; } }
 

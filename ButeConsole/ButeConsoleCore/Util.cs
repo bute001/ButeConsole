@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ButeConsole
 {
-    internal class CommandUtil
+    internal class Util
     {
         public object ConvertInstance(Type type, Dictionary<string, string> param)
         {
@@ -20,7 +20,7 @@ namespace ButeConsole
 
                 if (p.CanWrite && param.ContainsKey(name))
                 {
-                    var value = getValue(p.PropertyType, param[name]);
+                    var value = GetValue(p.PropertyType, param[name]);
 
                     p.SetValue(instance, value);
                 }
@@ -79,13 +79,13 @@ namespace ButeConsole
         }
 
 
-        private object getValue(Type type, string str)
+        private object GetValue(Type type, string str)
         {
-            if (type == CommandConst.STRINGTYPE)
+            if (type == Const.STRINGTYPE)
             {
                 return str;
             }
-            else if (type == CommandConst.DOUBLETYPE)
+            else if (type == Const.DOUBLETYPE)
             {
                 double value;
                 if (double.TryParse(str, out value))
@@ -97,7 +97,7 @@ namespace ButeConsole
                     throw new InstructionExcepton($"{type.Name} parameter must be double");
                 }
             }
-            else if (type == CommandConst.FLOATTYPE)
+            else if (type == Const.FLOATTYPE)
             {
                 float value;
                 if (float.TryParse(str, out value))
@@ -109,7 +109,7 @@ namespace ButeConsole
                     throw new InstructionExcepton($"{type.Name} parameter must be float");
                 }
             }
-            else if (type == CommandConst.INTTYPE)
+            else if (type == Const.INTTYPE)
             {
                 int value;
                 if (int.TryParse(str, out value))
@@ -121,7 +121,7 @@ namespace ButeConsole
                     throw new InstructionExcepton($"{type.Name} parameter must be int");
                 }
             }
-            else if (type == CommandConst.GUIDTYPE)
+            else if (type == Const.GUIDTYPE)
             {
                 Guid value;
                 if (Guid.TryParse(str, out value))
@@ -133,7 +133,7 @@ namespace ButeConsole
                     throw new InstructionExcepton($"{type.Name} parameter must be Guid");
                 }
             }
-            else if (type == CommandConst.DATETIMETYPE)
+            else if (type == Const.DATETIMETYPE)
             {
                 DateTime value;
                 if (DateTime.TryParse(str, out value))
@@ -145,7 +145,7 @@ namespace ButeConsole
                     throw new InstructionExcepton($"{type.Name} parameter must be DateTime");
                 }
             }
-            else if (type == CommandConst.BOOLYPE)
+            else if (type == Const.BOOLYPE)
             {
                 return true;
             }

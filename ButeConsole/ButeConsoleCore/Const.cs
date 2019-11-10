@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ButeConsole
 {
-    internal class CommandConst
+    internal class Const
     {
         public static readonly Type STRINGTYPE = typeof(string);
 

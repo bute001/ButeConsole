@@ -28,11 +28,7 @@ namespace ButeConsole
         {
             foreach (var type in AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()))
             {
-                if (type == typeof(CommandBase<>))
-                {
-                    continue;
-                }
-                else if (type.GetTypeInfo().ImplementedInterfaces.Any(x => x == typeof(ICommand)))
+                if (type.IsClass && !type.IsAbstract && type.GetTypeInfo().ImplementedInterfaces.Any(x => x == typeof(ICommand)))
                 {
                     object newObject = Activator.CreateInstance(type);
                     if (newObject is ICommand command)
