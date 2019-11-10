@@ -1,5 +1,5 @@
 # ButeConsole
-Simple Console command integration, you can quickly use it to use commands to operate your tasks.
+The simple console command integration, you can quickly use it to use commands to operate your tasks.
 
 简易的Console指令集成，可以快速的使用他来使用命令操作你的任务。
 
@@ -23,7 +23,7 @@ class Program
 
 
 ```c#
-class HelloCommand : CommandBase<Hello>
+class HelloCommand : CommandEntity<Hello>
     {
         public class Hello
         {
@@ -57,5 +57,6 @@ class HelloCommand : CommandBase<Hello>
 
 
 
->>hello -n demo -d
->>Id=0;Name=demo;HasBack=True
+>hello -n demo -d
+>Id=0;Name=demo;HasBack=True
+

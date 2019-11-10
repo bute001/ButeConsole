@@ -5,19 +5,22 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>ButeConsoleCore</AssemblyName>
     <RootNamespace>ButeConsole</RootNamespace>
-    <ApplicationIcon></ApplicationIcon>
+    <ApplicationIcon>app.ico</ApplicationIcon>
     <StartupObject />
     <Authors>Bute</Authors>
     <PackageId>ButeConsoleCore</PackageId>
     <Product>ButeConsole</Product>
     <Win32Resource />
-    <Description>please see https://github.com/bute001/ButeConsole</Description>
+    <Description>The simple console command integration, you can quickly use it to use commands to operate your tasks.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <Company />
     <RepositoryUrl>https://github.com/bute001/ButeConsole.git</RepositoryUrl>
     <PackageIcon>Console.png</PackageIcon>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
